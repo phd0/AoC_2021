@@ -44,7 +44,8 @@ def writeText(i, y, data):
 
 
 def writeGG(i, tir):
-    textsurface = myfont30.render(str(winNumber), False, (255, 215, 00))
+    textsurface = myfont30.render(
+        str(winNumber), False, (255, 255-round(tir*2.5), 255))
     XX = int(3 + math.trunc(i / 8) * 80)
     YY = int(3 + ((i*80) % 640))
     pygame.draw.rect(screen, (200, 0, 0), pygame.Rect(XX, YY, 76, 76), 1)
