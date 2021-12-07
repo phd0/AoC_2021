@@ -1,3 +1,7 @@
+import time
+import math
+
+
 def facto(value1, value2):
     result = 0
     for i in range(1, abs(value1 - value2) + 1):
@@ -18,7 +22,6 @@ def solve(pa, data):
                 result[d] += facto(d, data[i])
         if result[d] < mini and result[d]:
             mini = result[d]
-        pass
     return mini
 
 
@@ -30,4 +33,7 @@ if __name__ == "__main__":
     tmp = map(int, data)
     data = list(tmp)
     print("Part 1=", solve(1, data))
+    time_start = time.time()
     print("Part 2=", solve(2, data))
+    tt = time.time() - time_start
+    print("execute time: ", math.trunc(tt/60), ":", round(tt % 60, 2), sep='')
